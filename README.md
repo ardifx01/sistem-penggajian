@@ -1,61 +1,91 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Sistem Informasi Penggajian Karyawan
+Aplikasi web manajemen penggajian karyawan yang dibangun menggunakan Laravel 12. Didesain untuk mempermudah proses administrasi gaji, dari pengelolaan data karyawan, absensi, hingga pembuatan laporan gaji secara efisien dan akurat.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+✨ Fitur Utama
+Otentikasi Dua Peran: Sistem login terpisah untuk Admin dan Pegawai dengan hak akses yang berbeda.
 
-## About Laravel
+Dashboard Interaktif:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Admin: Ringkasan data karyawan, jabatan, dan absensi terkini.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Pegawai: Informasi profil, rincian gaji bulan ini, dan rekap absensi pribadi.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Manajemen Master Data (Admin):
 
-## Learning Laravel
+CRUD Data Karyawan (lengkap dengan foto profil dan penautan akun login).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+CRUD Data Jabatan (termasuk gaji pokok dan tunjangan).
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Manajemen Transaksi (Admin):
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Input Absensi Harian untuk semua karyawan dalam satu halaman, terintegrasi dengan rekap bulanan.
 
-## Laravel Sponsors
+Input Potongan Gaji insidental untuk karyawan tertentu atau semua karyawan.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Kalkulasi Gaji Otomatis: Gaji bersih dihitung secara otomatis berdasarkan Gaji Pokok, Tunjangan, Absensi (potongan alpha), dan potongan lainnya.
 
-### Premium Partners
+Laporan Profesional:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Laporan Gaji Bulanan.
 
-## Contributing
+Laporan Absensi Bulanan.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Cetak Slip Gaji individual yang modern dan informatif.
 
-## Code of Conduct
+Fitur AJAX: Pencarian dan pemfilteran data secara real-time tanpa perlu me-refresh halaman untuk pengalaman pengguna yang lebih cepat.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Profil Pengguna: Setiap pengguna dapat melihat profil dan mengganti password dengan aman.
 
-## Security Vulnerabilities
+🚀 Teknologi yang Digunakan
+Backend: Laravel 12, PHP 8.3
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Frontend: Blade, Bootstrap (SB Admin 2 Template), jQuery, AJAX
 
-## License
+Database: MySQL
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Web Server: Apache (via Laragon) / Laravel Sail
+
+🛠️ Cara Instalasi dan Penggunaan
+Pastikan Anda sudah memiliki Composer dan NPM terinstal di sistem Anda.
+
+Clone repositori ini:
+
+git clone [https://github.com/adam-miftah/sistem-penggajian.git](https://github.com/adam-miftah/sistem-penggajian.git)
+cd sistem-penggajian
+
+Instal dependensi:
+
+composer install
+npm install && npm run build
+
+Setup Environment:
+
+Salin file .env.example menjadi .env.
+
+Buat database baru (misal: sistem_penggajian).
+
+Atur konfigurasi database di file .env Anda (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+
+Jalankan Migrasi & Buat Key:
+
+php artisan key:generate
+php artisan migrate:fresh
+php artisan storage:link
+
+(Opsional) Buat Akun Admin Awal:
+Buka terminal dan jalankan Tinker:
+
+php artisan tinker
+
+Lalu jalankan kode berikut di dalam shell Tinker:
+
+\App\Models\User::create(['name' => 'Admin', 'email' => 'admin@gmail.com', 'password' => bcrypt('password'), 'role' => 'admin']);
+
+Jalankan Aplikasi:
+
+php artisan serve
+
+Buka http://127.0.0.1:8000 di browser Anda.
+
+📜 Lisensi
+Proyek ini dilisensikan di bawah Lisensi MIT.
