@@ -1,9 +1,8 @@
 # 💼 Sistem Informasi Penggajian Karyawan  
 
-[![GitHub stars](https://img.shields.io/github/stars/adam-miftah/sistem-penggajian?style=for-the-badge)](https://github.com/adam-miftah/sistem-penggajian/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/adam-miftah/sistem-penggajian?style=for-the-badge)](https://github.com/adam-miftah/sistem-penggajian/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/adam-miftah/sistem-penggajian?style=for-the-badge)](https://github.com/adam-miftah/sistem-penggajian/issues)
-[![GitHub license](https://img.shields.io/github/license/adam-miftah/sistem-penggajian?style=for-the-badge)](LICENSE)
+[![Versi Proyek](https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge)](URL_MENUJU_RELEASE_NOTES_JIKA_ADA)
+[![Framework Digunakan](https://img.shields.io/badge/Framework-Laravel_vX.Y-FF2D20?style=for-the-badge&logo=laravel)](https://laravel.com)
+[![PHP Version](https://img.shields.io/badge/PHP-%3E%3D8.1-777BB4?style=for-the-badge&logo=php)](https://www.php.net/)
 
 Aplikasi web berbasis **Laravel 12** untuk mengelola proses penggajian karyawan dengan cepat, efisien, dan akurat.  
 Dirancang untuk mempermudah administrasi mulai dari **data karyawan, absensi, hingga laporan gaji** dengan antarmuka yang ramah pengguna.  
@@ -100,4 +99,20 @@ Silakan gunakan, modifikasi, dan kembangkan sesuai kebutuhan 🚀
 
 ---
 
-Mau saya tambahkan juga **contoh badge GitHub (stars, forks, issues)** biar lebih estetik?
+## 🤝 Ingin Berkontribusi?
+Kontribusi Anda sangat kami harapkan! Baik itu berupa ide, laporan bug, atau pull request.
+- **Fork repository ini.**
+- **Buat Branch baru (git checkout -b fitur/NamaFiturAnda).**
+- **Commit perubahan Anda (git commit -m 'Menambahkan fitur keren').**
+- **Push ke branch Anda (git push origin fitur/NamaFiturAnda).**
+- **Buat Pull Request baru.**
+- **Pastikan untuk mengikuti panduan kontribusi (jika ada file CONTRIBUTING.md).**
+
+---
+
+## 💌 Kontak & Dukungan
+
+Punya pertanyaan, saran, atau ingin berdiskusi?
+
+Email: [adammiftah196@gmail.com] 
+
