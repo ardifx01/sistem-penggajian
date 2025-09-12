@@ -68,7 +68,7 @@ npm install && npm run build
 - Salin file .env.example menjadi .env
 - Buat database baru, misalnya: sistem_penggajian
 - Sesuaikan konfigurasi DB di file .env
-- 
+
 ### 4️⃣ Migrasi & Setup
 ```bash
 php artisan key:generate
