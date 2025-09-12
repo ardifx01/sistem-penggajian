@@ -1,91 +1,103 @@
-Sistem Informasi Penggajian Karyawan
-Aplikasi web manajemen penggajian karyawan yang dibangun menggunakan Laravel 12. Didesain untuk mempermudah proses administrasi gaji, dari pengelolaan data karyawan, absensi, hingga pembuatan laporan gaji secara efisien dan akurat.
+# 💼 Sistem Informasi Penggajian Karyawan  
 
-✨ Fitur Utama
-Otentikasi Dua Peran: Sistem login terpisah untuk Admin dan Pegawai dengan hak akses yang berbeda.
+[![GitHub stars](https://img.shields.io/github/stars/adam-miftah/sistem-penggajian?style=for-the-badge)](https://github.com/adam-miftah/sistem-penggajian/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/adam-miftah/sistem-penggajian?style=for-the-badge)](https://github.com/adam-miftah/sistem-penggajian/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/adam-miftah/sistem-penggajian?style=for-the-badge)](https://github.com/adam-miftah/sistem-penggajian/issues)
+[![GitHub license](https://img.shields.io/github/license/adam-miftah/sistem-penggajian?style=for-the-badge)](LICENSE)
 
-Dashboard Interaktif:
+Aplikasi web berbasis **Laravel 12** untuk mengelola proses penggajian karyawan dengan cepat, efisien, dan akurat.  
+Dirancang untuk mempermudah administrasi mulai dari **data karyawan, absensi, hingga laporan gaji** dengan antarmuka yang ramah pengguna.  
 
-Admin: Ringkasan data karyawan, jabatan, dan absensi terkini.
+---
 
-Pegawai: Informasi profil, rincian gaji bulan ini, dan rekap absensi pribadi.
+## ✨ Fitur Utama  
 
-Manajemen Master Data (Admin):
+### 🔑 Otentikasi Multi-Role  
+- **Admin**: Mengelola data master, absensi, transaksi, dan laporan.  
+- **Pegawai**: Melihat profil, rekap absensi, dan slip gaji pribadi.  
 
-CRUD Data Karyawan (lengkap dengan foto profil dan penautan akun login).
+### 📊 Dashboard Interaktif  
+- **Admin**: Ringkasan data karyawan, jabatan, dan absensi terkini.  
+- **Pegawai**: Informasi gaji bulan berjalan & absensi pribadi.  
 
-CRUD Data Jabatan (termasuk gaji pokok dan tunjangan).
+### 👥 Manajemen Master Data (Admin)  
+- CRUD **Data Karyawan** (lengkap dengan foto profil + akun login).  
+- CRUD **Data Jabatan** (gaji pokok & tunjangan).  
 
-Manajemen Transaksi (Admin):
+### 🕒 Manajemen Transaksi (Admin)  
+- Input **Absensi Harian** (terintegrasi ke rekap bulanan).  
+- Input **Potongan Gaji** (individu atau massal).  
+- **Kalkulasi Gaji Otomatis**:  
+  > Gaji Bersih = Gaji Pokok + Tunjangan – Potongan Absensi – Potongan Lainnya  
 
-Input Absensi Harian untuk semua karyawan dalam satu halaman, terintegrasi dengan rekap bulanan.
+### 📑 Laporan Profesional  
+- Laporan Gaji Bulanan.  
+- Laporan Absensi Bulanan.  
+- **Cetak Slip Gaji** modern & informatif.  
 
-Input Potongan Gaji insidental untuk karyawan tertentu atau semua karyawan.
+### ⚡ Fitur Tambahan  
+- **AJAX Search & Filter** → Data real-time tanpa reload.  
+- **Profil Pengguna** → Ganti password & edit profil dengan aman.  
 
-Kalkulasi Gaji Otomatis: Gaji bersih dihitung secara otomatis berdasarkan Gaji Pokok, Tunjangan, Absensi (potongan alpha), dan potongan lainnya.
+---
 
-Laporan Profesional:
+## 🚀 Teknologi yang Digunakan  
 
-Laporan Gaji Bulanan.
+- **Backend**: Laravel 12 (PHP 8.3)  
+- **Frontend**: Blade + Bootstrap (SB Admin 2) + jQuery + AJAX  
+- **Database**: MySQL  
+- **Server**: Apache (Laragon) / Laravel Sail  
 
-Laporan Absensi Bulanan.
+---
 
-Cetak Slip Gaji individual yang modern dan informatif.
+## 🛠️ Instalasi & Penggunaan  
 
-Fitur AJAX: Pencarian dan pemfilteran data secara real-time tanpa perlu me-refresh halaman untuk pengalaman pengguna yang lebih cepat.
-
-Profil Pengguna: Setiap pengguna dapat melihat profil dan mengganti password dengan aman.
-
-🚀 Teknologi yang Digunakan
-Backend: Laravel 12, PHP 8.3
-
-Frontend: Blade, Bootstrap (SB Admin 2 Template), jQuery, AJAX
-
-Database: MySQL
-
-Web Server: Apache (via Laragon) / Laravel Sail
-
-🛠️ Cara Instalasi dan Penggunaan
-Pastikan Anda sudah memiliki Composer dan NPM terinstal di sistem Anda.
-
-Clone repositori ini:
-
-git clone [https://github.com/adam-miftah/sistem-penggajian.git](https://github.com/adam-miftah/sistem-penggajian.git)
+### 1️⃣ Clone Repository  
+```bash
+git clone https://github.com/adam-miftah/sistem-penggajian.git
 cd sistem-penggajian
+```
 
-Instal dependensi:
-
+### 2️⃣ Instal Dependensi
+```bash
 composer install
 npm install && npm run build
+```
 
-Setup Environment:
-
-Salin file .env.example menjadi .env.
-
-Buat database baru (misal: sistem_penggajian).
-
-Atur konfigurasi database di file .env Anda (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
-
-Jalankan Migrasi & Buat Key:
-
+### 3️⃣ Konfigurasi Environment
+- Salin file .env.example menjadi .env
+- Buat database baru, misalnya: sistem_penggajian
+- Sesuaikan konfigurasi DB di file .env
+- 
+### 4️⃣ Migrasi & Setup
+```bash
 php artisan key:generate
 php artisan migrate:fresh
 php artisan storage:link
+```
 
-(Opsional) Buat Akun Admin Awal:
-Buka terminal dan jalankan Tinker:
-
+### 5️⃣ Buat Akun Admin Awal (Opsional)
+```bash
 php artisan tinker
+\App\Models\User::create([
+    'name' => 'Admin',
+    'email' => 'admin@gmail.com',
+    'password' => bcrypt('password'),
+    'role' => 'admin'
+]);
+```
 
-Lalu jalankan kode berikut di dalam shell Tinker:
-
-\App\Models\User::create(['name' => 'Admin', 'email' => 'admin@gmail.com', 'password' => bcrypt('password'), 'role' => 'admin']);
-
-Jalankan Aplikasi:
-
+### 6️⃣ Jalankan Aplikasi
+```bash
 php artisan serve
+```
 
-Buka http://127.0.0.1:8000 di browser Anda.
+Buka di browser → http://127.0.0.1:8000
 
-📜 Lisensi
-Proyek ini dilisensikan di bawah Lisensi MIT.
+## 📜 Lisensi
+Proyek ini dilisensikan di bawah MIT License.
+Silakan gunakan, modifikasi, dan kembangkan sesuai kebutuhan 🚀
+
+---
+
+Mau saya tambahkan juga **contoh badge GitHub (stars, forks, issues)** biar lebih estetik?
